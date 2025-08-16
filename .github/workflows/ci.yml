@@ -85,3 +85,24 @@ jobs:
             test-results
             playwright-report/data/*trace*.zip
           retention-days: 7
+  release:
+    name: Semantic Release
+    needs: [lint-build-unit, e2e]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
