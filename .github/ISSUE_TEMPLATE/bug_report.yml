@@ -1,0 +1,26 @@
+name: 'Bug report'
+description: 'Report a bug with clear reproduction'
+title: '[bug] '
+labels: ['bug']
+body:
+  - type: textarea
+    id: what
+    attributes: { label: What happened?, description: Expected vs actual }
+    validations: { required: true }
+  - type: textarea
+    id: repro
+    attributes: { label: Reproduction steps, placeholder: '1) … 2) …' }
+    validations: { required: true }
+  - type: input
+    id: dataset
+    attributes: { label: Dataset scale, placeholder: 'e.g., 50×18×3' }
+    validations: { required: true }
+  - type: dropdown
+    id: browser
+    attributes:
+      {
+        label: Browser(s),
+        multiple: true,
+        options: ['Chromium/Chrome', 'Firefox', 'Safari', 'Other'],
+      }
+    validations: { required: true }

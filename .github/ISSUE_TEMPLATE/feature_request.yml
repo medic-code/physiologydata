@@ -1,0 +1,16 @@
+name: 'Feature request'
+description: 'Propose a feature with outcomes/acceptance criteria'
+title: '[feat] '
+labels: ['enhancement']
+body:
+  - type: textarea
+    id: outcome
+    attributes: { label: User outcome, placeholder: 'As a researcher, I want to…' }
+    validations: { required: true }
+  - type: textarea
+    id: acceptance
+    attributes: { label: Acceptance criteria, placeholder: '- [ ] When I … then …' }
+    validations: { required: true }
+  - type: textarea
+    id: scope
+    attributes: { label: Out of scope }

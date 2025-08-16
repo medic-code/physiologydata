@@ -1,7 +1,9 @@
 # Physiological Simulation Data Analysis Tool
+
 ## Product Requirements Document
 
 ### Executive Summary
+
 A web-based tool for analyzing physiological simulation data from burn shock models. The tool enables researchers to visualize complex time-series data, compare multiple simulations, and identify patterns in physiological responses across different burn scenarios and treatment protocols.
 
 ---
@@ -9,6 +11,7 @@ A web-based tool for analyzing physiological simulation data from burn shock mod
 ## Problem Statement
 
 **Current Challenge:**
+
 - Physiological models generate complex time-series data with 15-20 variables
 - Data exists across multiple Excel tabs representing different simulation scenarios
 - High cognitive load required to identify patterns and model inconsistencies
@@ -16,6 +19,7 @@ A web-based tool for analyzing physiological simulation data from burn shock mod
 - Unwieldy spreadsheet navigation inhibits quick insight generation
 
 **Impact:**
+
 - Slower model validation and refinement
 - Missed insights into physiological relationships
 - Inefficient analysis of burn shock treatment protocols
@@ -32,11 +36,13 @@ A specialized data visualization tool that transforms complex physiological simu
 ## Target Users
 
 **Primary Users:** Researchers with high technical comfort levels
+
 - Physiological modeling specialists
 - Burn treatment researchers
 - Medical simulation developers
 
 **Secondary Users:** Technical stakeholders receiving analysis reports
+
 - Clinical advisors
 - Research collaborators
 - Model validation reviewers
@@ -48,6 +54,7 @@ A specialized data visualization tool that transforms complex physiological simu
 ### 1. Data Import & Management
 
 **Feature:** Excel File Import with Metadata Capture
+
 - **Requirement:** Import .xlsx files containing multiple tabs (each tab = one simulation)
 - **Metadata Collection:** Form popup during import to capture:
   - TBSA percentage
@@ -60,6 +67,7 @@ A specialized data visualization tool that transforms complex physiological simu
 - **Load Behavior:** Import all tabs automatically
 
 **Acceptance Criteria:**
+
 - [ ] Supports .xlsx file format
 - [ ] Metadata form appears on import with required fields
 - [ ] All tabs loaded without user selection
@@ -69,7 +77,8 @@ A specialized data visualization tool that transforms complex physiological simu
 ### 2. Data Visualization Engine
 
 **Feature:** Interactive Multi-Format Visualization
-- **Chart Types:** 
+
+- **Chart Types:**
   - Line graphs (primary for time-series)
   - Scatter plots (for variable relationships)
   - Bar charts (for comparative analysis, snapshots at specific times)
@@ -83,6 +92,7 @@ A specialized data visualization tool that transforms complex physiological simu
 - **Performance:** Graph updates within seconds
 
 **Acceptance Criteria:**
+
 - [ ] Multiple chart type options available for same dataset
 - [ ] Smooth zooming and panning functionality across chart types
 - [ ] Series toggle with legend interaction
@@ -92,13 +102,15 @@ A specialized data visualization tool that transforms complex physiological simu
 - [ ] Intuitive chart type selection interface
 
 **Feature:** Multi-Simulation Comparison
-- **Comparison Modes:** 
+
+- **Comparison Modes:**
   - Overlay multiple simulations on same graph
   - Side-by-side view option
 - **Capacity:** Support 2-5 simultaneous simulations
 - **Variable Selection:** Choose which variables to compare across datasets
 
 **Acceptance Criteria:**
+
 - [ ] Clear visual distinction between different simulations
 - [ ] Ability to overlay same variables from different simulations
 - [ ] Side-by-side comparison view
@@ -107,12 +119,14 @@ A specialized data visualization tool that transforms complex physiological simu
 ### 3. Reference Range Integration
 
 **Feature:** Normal Physiological Range Display
+
 - **Built-in Ranges:** Pre-configured normal ranges for common vitals (HR, BP, MAP, RR)
 - **Visual Display:** Shaded regions or reference lines on graphs
 - **User Configuration:** Ability to modify or add custom reference ranges
 - **Toggle Option:** Show/hide reference ranges per user preference
 
 **Acceptance Criteria:**
+
 - [ ] Pre-loaded normal ranges for standard physiological variables
 - [ ] Visual reference ranges don't obscure data visualization
 - [ ] User can edit existing ranges via settings interface
@@ -121,12 +135,14 @@ A specialized data visualization tool that transforms complex physiological simu
 ### 4. User Interface & Navigation
 
 **Feature:** Dataset Navigation & Management
+
 - **Initial State:** Empty canvas with dataset selection
 - **Navigation:** Easy switching between loaded datasets
 - **Variable Selection:** Simple interface for choosing variables to plot
 - **Data Table Access:** View raw data in tabular format alongside graphs
 
 **Acceptance Criteria:**
+
 - [ ] Clear dataset selection interface
 - [ ] Intuitive variable selection without search/filter complexity
 - [ ] Seamless switching between datasets
@@ -135,12 +151,14 @@ A specialized data visualization tool that transforms complex physiological simu
 ### 5. Template & Preset Management
 
 **Feature:** Visualization Templates
+
 - **Template Creation:** "Save current view as template" functionality
 - **Auto-Application:** Apply templates automatically on data import
 - **Template Management:** User can name, edit, and delete saved templates
 - **Common Combinations:** Save frequently used variable combinations
 
 **Acceptance Criteria:**
+
 - [ ] One-click template saving from current visualization
 - [ ] Template auto-application option during import
 - [ ] Template management interface
@@ -149,26 +167,30 @@ A specialized data visualization tool that transforms complex physiological simu
 ### 6. Comments & Annotations
 
 **Feature:** Analysis Documentation
-- **Comment Types:** 
+
+- **Comment Types:**
   - Comments on entire datasets
   - Comments on specific data points
 - **Simple Implementation:** Text-based comments initially
 - **Persistence:** Comments saved with analysis sessions
 
 **Acceptance Criteria:**
+
 - [ ] Add comments to datasets via right-click or dedicated button
-- [ ] Point-specific comments linked to time/value coordinates  
+- [ ] Point-specific comments linked to time/value coordinates
 - [ ] Comments visible in saved sessions
 - [ ] Comments included in export functionality
 
 ### 7. Export & Sharing
 
 **Feature:** Static Export Capabilities
+
 - **Export Formats:** PNG images for individual graphs
 - **Report Generation:** Multi-graph layouts with annotations
 - **Export Quality:** High-resolution suitable for presentations/publications
 
 **Acceptance Criteria:**
+
 - [ ] Individual graph export as PNG
 - [ ] Multi-graph report layout generation
 - [ ] Include metadata and comments in reports
@@ -176,13 +198,15 @@ A specialized data visualization tool that transforms complex physiological simu
 
 ### 8. Session Management
 
-**Feature:** Analysis Session Persistence  
+**Feature:** Analysis Session Persistence
+
 - **Local Storage:** Save analysis sessions locally (no cloud storage initially)
 - **Session Organization:** Sessions organized/selected by date
 - **Session Content:** Includes loaded datasets, visualizations, comments, and templates
 - **Security:** Local-only storage to maintain data privacy
 
 **Acceptance Criteria:**
+
 - [ ] Save complete analysis state locally
 - [ ] Session list organized by date created
 - [ ] Restore all visualizations, comments, and settings on session load
@@ -193,6 +217,7 @@ A specialized data visualization tool that transforms complex physiological simu
 ## Technical Specifications
 
 ### Platform Requirements
+
 - **Platform:** Web-based application
 - **Browser Compatibility:** All modern browsers (Chrome, Firefox, Safari, Edge)
 - **Performance Target:** Graph updates within 2-3 seconds
@@ -200,6 +225,7 @@ A specialized data visualization tool that transforms complex physiological simu
 - **Concurrent Simulations:** 2-5 datasets loaded simultaneously
 
 ### Data Specifications
+
 - **File Format:** Excel (.xlsx) with multiple tabs
 - **Time Series:** 0-72 hours duration (typically 24 hours)
 - **Time Resolution:** Minutes to hours, consistent intervals
@@ -207,6 +233,7 @@ A specialized data visualization tool that transforms complex physiological simu
 - **Data Structure:** Time column + variable columns per tab
 
 ### Architecture Considerations
+
 - **Storage:** Local browser storage only (initial version)
 - **Security:** No cloud/server data transmission
 - **Scalability:** Architecture designed for future secure sharing capabilities
@@ -217,20 +244,24 @@ A specialized data visualization tool that transforms complex physiological simu
 ## User Stories
 
 ### Data Import
+
 - **As a researcher**, I want to import Excel files with simulation data so that I can analyze multiple scenarios efficiently
 - **As a researcher**, I want to capture metadata during import so that I can distinguish between different simulation parameters
 
 ### Visualization
+
 - **As a researcher**, I want to create interactive time-series visualizations so that I can explore physiological patterns over time
 - **As a researcher**, I want to compare multiple simulations on the same graph so that I can validate model consistency across different parameters
 - **As a researcher**, I want to zoom into specific time ranges so that I can examine critical periods in detail
 
 ### Analysis
+
 - **As a researcher**, I want to see normal physiological ranges on my graphs so that I can quickly identify expected vs. abnormal responses
 - **As a researcher**, I want to save visualization templates so that I can quickly apply common analysis patterns to new data
 - **As a researcher**, I want to add comments to my analysis so that I can document insights and share findings with colleagues
 
-### Export & Sharing  
+### Export & Sharing
+
 - **As a researcher**, I want to export high-quality images so that I can include visualizations in research presentations and publications
 - **As a researcher**, I want to save my analysis sessions so that I can return to previous work and maintain analysis continuity
 
@@ -239,11 +270,13 @@ A specialized data visualization tool that transforms complex physiological simu
 ## Success Criteria
 
 ### Primary Metrics
+
 - **Time Reduction:** 50% reduction in time to identify physiological patterns compared to spreadsheet analysis
 - **Insight Generation:** Increased identification of model inconsistencies and physiological relationships
 - **Usability:** Researchers can complete full analysis workflow within first session without training
 
-### Secondary Metrics  
+### Secondary Metrics
+
 - **Export Usage:** Regular use of export functionality for research communication
 - **Session Persistence:** Users return to saved sessions for continued analysis
 - **Template Adoption:** Creation and reuse of visualization templates
@@ -253,6 +286,7 @@ A specialized data visualization tool that transforms complex physiological simu
 ## Development Phases
 
 ### Phase 1: Core MVP (Weeks 1-8)
+
 - Excel import with metadata capture
 - Basic time-series visualization with interactivity
 - Single simulation analysis capability
@@ -260,18 +294,21 @@ A specialized data visualization tool that transforms complex physiological simu
 - Static PNG export
 
 ### Phase 2: Comparison & Templates (Weeks 9-12)
+
 - Multi-simulation comparison views
 - Template creation and management
 - Reference range integration
 - Enhanced export with multi-graph reports
 
 ### Phase 3: Polish & Enhancement (Weeks 13-16)
+
 - Comments and annotations system
 - User interface refinement
 - Performance optimization
 - Comprehensive testing and bug fixes
 
 ### Future Considerations
+
 - Secure sharing capabilities (pending technical review)
 - Advanced statistical analysis features
 - Integration with physiological modeling software
@@ -282,11 +319,13 @@ A specialized data visualization tool that transforms complex physiological simu
 ## Risk Mitigation
 
 ### Technical Risks
+
 - **Browser Performance:** Optimize rendering for large datasets
 - **Data Security:** Maintain local-only storage until secure sharing solution approved
 - **File Format Variations:** Robust Excel parsing with clear error handling
 
 ### User Adoption Risks
+
 - **Learning Curve:** Intuitive interface design with minimal feature complexity initially
 - **Integration:** Ensure smooth workflow integration with existing research processes
 
