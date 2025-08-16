@@ -12,7 +12,9 @@
     "lint": "eslint .",
     "lint:ci": "eslint . --max-warnings 0",
     "test:watch": "vitest",
-    "preflight": "npm run format && npm run lint:ci && npm run build && npm run test && npm run test:e2e"
+    "preflight": "npm run format && npm run lint:ci && npm run build && npm run test && npm run test:e2e",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "keywords": [],
   "author": "",
