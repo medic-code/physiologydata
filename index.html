@@ -5,22 +5,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Physiology Data Visualisation</title>
+    <link rel="stylesheet" href="./src/styles/base.css" />
+    <link rel="stylesheet" href="./src/styles/layout.css" />
+    <link rel="stylesheet" href="./src/styles/components/simdetails.css" />
 </head>
 
 <body>
     <div class="app-container">
-        <header class="app-header">
-            <h1 class="app-container__title">Physiology Data tool</h1>
-        </header>
-
         <aside class="sidebar">
+            <header class="app-header">
+                <h1 class="app-container__title">Physiology Data tool</h1>
+            </header>
             <h2 class="sidebar__nav-title">IMPORTED SIMULATIONS</h2>
             <nav class="sidebar__nav">
                 <div class="sidebar__dataset-details">
                     <p class="sidebar__dataset-title">Burns Simulation 20% TBSA</p>
                     <p class="sidebar__dataset-subtitle">3 Simulations - 24 hours</p>
                 </div>
-                <ul>
+                <ul class="sidebar__dataset">
                     <li class="sidebar__dataset-item">No fluid</li>
                     <li class="sidebar__dataset-item">Small amount of fluid</li>
                     <li class="sidebar__dataset-item">Lots of initial fluid</li>
@@ -33,7 +35,7 @@
                 <button class="datacontrols__importbtn">Save Session</button>
                 <button class="datacontrols__importbtn-blue">Generate Report</button>
             </div>
-            <div class="import-data">
+            <div class="import-data hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
               d="M6 6L18 18M18 6L6 18"
@@ -61,29 +63,31 @@
             </div>
             <section class="simdetails">
                 <h2>Burns 40% TBSA</h2>
-                <div class="inputdata">
-                    <p class="inputdata__title">TBSA</p>
-                    <h4 class="inputdata__value">40%</h4>
-                </div>
-                <div class="inputdata">
-                    <p class="inputdata__title">Time Since Injury</p>
-                    <h4 class="inputdata__value">0</h4>
-                </div>
-                <div class="inputdata">
-                    <p class="inputdata__title">Weight</p>
-                    <h4 class="inputdata__value">70 kg</h4>
-                </div>
-                <div class="inputdata">
-                    <p class="inputdata__title">Fluids Prior to Arrival</p>
-                    <h4 class="inputdata__value">2000ml LR</h4>
-                </div>
-                <div class="inputdata">
-                    <p class="inputdata__title">Fluid regiment</p>
-                    <h4 class="inputdata__value">Modified Parkland</h4>
-                </div>
-                <div class="inputdata">
-                    <p class="inputdata__title">Model version</p>
-                    <h4 class="inputdata__value">4.5.00.51</h4>
+                <div class="details">
+                    <div class="inputdata">
+                        <p class="inputdata__title">TBSA</p>
+                        <h4 class="inputdata__value">40%</h4>
+                    </div>
+                    <div class="inputdata">
+                        <p class="inputdata__title">Time Since Injury</p>
+                        <h4 class="inputdata__value">0</h4>
+                    </div>
+                    <div class="inputdata">
+                        <p class="inputdata__title">Weight</p>
+                        <h4 class="inputdata__value">70 kg</h4>
+                    </div>
+                    <div class="inputdata">
+                        <p class="inputdata__title">Fluids Prior to Arrival</p>
+                        <h4 class="inputdata__value">2000ml LR</h4>
+                    </div>
+                    <div class="inputdata">
+                        <p class="inputdata__title">Fluid regiment</p>
+                        <h4 class="inputdata__value">Modified Parkland</h4>
+                    </div>
+                    <div class="inputdata">
+                        <p class="inputdata__title">Model version</p>
+                        <h4 class="inputdata__value">4.5.00.51</h4>
+                    </div>
                 </div>
             </section>
             <div class="chart-card">
@@ -115,6 +119,7 @@
                 <canvas class="chart-details"></canvas>
             </div>
             <div class="annotation-card">
+                <h2>Annotations</h2>
                 <div class="annotation-card__comment">
                     <time class="annotation-card__time" datetime="2025-08-06T12:14:00">12:14 6/8/25</time>
                     <p class="annotation-card__comment-text">
@@ -127,9 +132,9 @@
                 <button class="annotation-card__btn">Add comment</button>
             </div>
             <section class="table-container">
-                <h3>Time series Data</h3>
+                <h2 class="table-container__title">Time Data</h2>
                 <table class="table-container__table">
-                    <caption>
+                    <caption class="hidden">
                         Cardiac output versus Exudate chart
                     </caption>
                     <thead>

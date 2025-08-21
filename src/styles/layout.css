@@ -1,0 +1,75 @@
+.app-container {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 320px 1fr;
+}
+
+.sidebar__nav-title {
+  margin-top: var(--sp32);
+  color: var(--color-text-sec);
+  font-size: 14px;
+}
+
+.sidebar {
+  margin-top: var(--sp16);
+  margin-left: var(--sp16);
+}
+
+.sidebar__nav {
+  margin-top: var(--sp16);
+}
+
+.sidebar__dataset-title {
+  font-weight: 650;
+}
+
+.sidebar__dataset-subtitle {
+  font-size: var(--sp12);
+  color: var(--color-text-ter);
+}
+
+.sidebar__dataset {
+  margin-top: var(--sp16);
+  margin-left: var(--sp16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp12);
+  font-size: 14px;
+}
+
+.sidebar__dataset-item {
+  color: var(--color-text-sec);
+}
+
+.main-content {
+  margin-left: var(--sp8);
+  background: var(--color-background);
+}
+
+.datacontrols {
+  display: flex;
+  gap: var(--sp16);
+  margin-top: 2rem;
+  background: white;
+  padding: var(--sp16) var(--sp32);
+  margin-inline: var(--sp16);
+  border-radius: 0.5rem;
+}
+
+.table-container__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container__table th,
+.table-container__table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+@media (max-width: 980px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+}

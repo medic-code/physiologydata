@@ -1,0 +1,129 @@
+/* BASE RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:where(html) {
+  line-height: 1.5;
+}
+
+:where(body, h1, h2, h3, h4, p, ul, ol, dl, figure) {
+  margin: 0;
+}
+
+:where(ul, ol) {
+  list-style: none;
+  padding: 0;
+}
+
+img,
+video,
+canvas,
+svg,
+input {
+  display: block;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:root {
+  --font-fam:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  --sp4: 0.25rem;
+  --sp6: 0.375rem;
+  --sp8: 0.5rem;
+  --sp12: 0.75rem;
+  --sp16: 1rem;
+  --sp24: 1.5rem;
+  --sp32: 2rem;
+  --border-def: 1px solid hsl(0, 0%, 88%);
+  --border-dashed: 2px dashed hsl(0, 0%, 82%);
+  --color-disabled: hsl(0, 0%, 82%);
+  --color-background: hsl(0, 0%, 97%);
+  --color-text: hsl(0, 0%10%);
+  --color-text-sec: hsl(0, 0%, 42%);
+  --color-text-ter: hsl(0, 0%, 61%);
+  --color-text-dark: hsl(0, 0%, 29%);
+  --color-blue: hsl(210, 67%, 60%);
+  --color-blue-hover: hsl(210, 54%, 48%);
+  --blue-light-backgr: hsl(210, 100%, 97%);
+  --blue-verylight: hsl(207, 71%, 94%);
+  --color-chart-red: hsl(6, 78%, 57%);
+  --color-chart-map: hsl(204, 70%, 53%);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Document defaults */
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font-fam);
+  font-size: var(--sp16);
+}
+
+h1 {
+  font-size: var(--sp24);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--sp16);
+  font-weight: 650;
+}
+
+h3 {
+  font-size: var(--sp12);
+  font-weight: 600;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 0.5ch;
+  border: var(--border-def);
+  color: var(--color-text);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--sp8);
+  box-shadow: var(--shadow-card);
+  font-size: 14px;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:hover {
+  filter: brightness(1.03);
+}
+
+input[type='file'],
+input[type='text'],
+textarea {
+  border: var(--border-def);
+  border-radius: var(--sp8);
+  padding: 0.5rem, 0.75rem;
+}
+
+/* Utilities */
+
+.hidden {
+  display: none;
+}
+
+.card {
+  border: var(--border);
+  border-radius: var(--sp8);
+  box-shadow: var(--shadow-card);
+}
