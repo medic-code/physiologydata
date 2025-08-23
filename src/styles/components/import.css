@@ -1,0 +1,49 @@
+.import-data {
+  gap: var(--sp8);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-background);
+}
+
+.import-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp16);
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--color-text-ter);
+}
+
+.import-data__closebtn {
+  cursor: pointer;
+}
+
+.import-data__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--sp16);
+}
+
+.import-form__nameinput {
+  width: 100%;
+  padding: var(--sp8);
+}
+
+.import-form__datasetlabel {
+  font-size: 1rem;
+  margin-bottom: var(--sp32);
+}
+
+.import-form__importbtn {
+  background: var(--color-chart-map);
+  font-weight: 600;
+  color: white;
+}
+
+.import-form__cancelbtn {
+  color: white;
+  font-weight: 600;
+  background: var(--color-chart-red);
+}

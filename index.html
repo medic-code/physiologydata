@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./src/styles/base.css" />
     <link rel="stylesheet" href="./src/styles/layout.css" />
     <link rel="stylesheet" href="./src/styles/components/simdetails.css" />
+    <link rel="stylesheet" href="./src/styles/components/import.css" />
+    <script type="text/javascript" src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
 </head>
 
 <body>
@@ -32,35 +34,40 @@
         <main class="main-content">
             <div class="datacontrols">
                 <button class="datacontrols__importbtn">Import data</button>
-                <button class="datacontrols__importbtn">Save Session</button>
-                <button class="datacontrols__importbtn-blue">Generate Report</button>
+                <button class="datacontrols__savebtn">Save Session</button>
+                <button class="datacontrols__generatebtn">Generate Report</button>
             </div>
-            <div class="import-data hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M6 6L18 18M18 6L6 18"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+            <dialog class="import-data" close>
+                <div class="import-data__header">
+                    <h2>Import Dataset</h2>
+                    <svg class="import-data__closebtn" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M6 6L18 18M18 6L6 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+                </div>
                 <form class="import-form">
                     <div class="import-form__fileupload">
-                        <label for="dataset-file">Select dataset file</label>
-                        <input type="file" id="dataset-file" name="dataset-file" accept=".xlsx" />
+                        <label class="import-form__datasetlabel" for="dataset-file">Select dataset file:
+              </label>
+                        <input type="file" class="dataset-file" id="dataset-file" name="dataset-file" accept=".xlsx" />
                         <span id="file-hint" class="hint">Allows formats: XLSX, Max size 5mb.</span>
                     </div>
+                    <h2>Batch Configuration</h2>
                     <div class="import-form__datasetname">
-                        <label for="name" id="name">Name of Dataset</label>
-                        <input type="text" id="name" name="name" />
+                        <label for="name" id="name">Name of Dataset: </label>
+                        <input class="import-form__nameinput" type="text" id="name" name="name" />
                     </div>
                     <div class="import-form__btns">
                         <button type="submit" class="import-form__importbtn">Import</button>
                         <button type="button" class="import-form__cancelbtn">Cancel</button>
                     </div>
                 </form>
-            </div>
+            </dialog>
             <section class="simdetails">
                 <h2>Burns 40% TBSA</h2>
                 <div class="details">
@@ -138,32 +145,15 @@
                         Cardiac output versus Exudate chart
                     </caption>
                     <thead>
-                        <tr>
-                            <th scope="col">Time HR</th>
-                            <th scope="col">Heart Rate (bpm)</th>
-                            <th scope="col">Systolic BP (mmHg)</th>
-                            <th scope="col">Diastolic BP (mmHg)</th>
-                        </tr>
+                        <tr class="table-container__header"></tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>65</td>
-                        </tr>
-                        <tr>
-                            <td>65</td>
-                            <td>65</td>
-                            <td>65</td>
-                            <td>65</td>
-                        </tr>
-                    </tbody>
+                    <tbody class="table-container__rows"></tbody>
                 </table>
             </section>
         </main>
     </div>
     <script type="module" src="/src/main.js"></script>
+    <!-- use version 0.20.3 -->
 </body>
 
 </html>
